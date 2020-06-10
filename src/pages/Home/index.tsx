@@ -3,6 +3,7 @@ import {FiLogIn} from 'react-icons/fi';
 import logo from '../../assets/logo.svg';
 import {useHistory} from 'react-router-dom';
 import api from '../../services/api';
+import { login } from '../../services/auth';
 import male from '../../assets/male.png';
 import female from '../../assets/female.png';
 import './styles.css';
@@ -43,7 +44,8 @@ const Home = () => {
 
         const {email, password} = formData;       
 
-        await api.post('/authenticate', {email, password}).then(()=> {
+        await api.post('/authenticate', {email, password}).then((response) => {
+            login(response.data.token);
             history.push('/list-pets')
         })
         .catch((err,) => {
