@@ -1,0 +1,25 @@
+.pets-grid .pet-photo{
+    height: 150px;
+  }
+.pets-grid a {
+    width: 100%;
+    height: 60px;
+    background: var(--primary-color);  
+    text-decoration: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  
+.pets-grid a strong {
+    flex: 1;
+    text-align: center;
+    color: #FFF;
+  }
+  
+.pets-grid a:hover {
+    opacity: .9;
+  }

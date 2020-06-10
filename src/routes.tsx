@@ -4,6 +4,7 @@ import { isAutheticate } from "./services/auth";
 
 import Home from './pages/Home';
 import ListPets from './pages/ListPets';
+import PetDetail from './pages/PetDetail';
 
 const PrivateRoute = ({ component: Component, ...rest }: any) => (
     <Route
@@ -24,6 +25,7 @@ const Routes = () => {
             <Switch>
                 <Route component={Home} path="/" exact />
                 <PrivateRoute component={ListPets} path="/list-pets"/>
+                <PrivateRoute component={PetDetail} path="/pet-detail/:id"/>
             </Switch>
         </BrowserRouter>
     );
