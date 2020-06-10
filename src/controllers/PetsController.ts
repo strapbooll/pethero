@@ -37,7 +37,15 @@ routes.get("/pets", async (request : Request, response : Response) => {
 routes.get("/pets/:id", async (request : Request, response : Response) => {
     try {
         const {id} = request.params;
-        const pet = await knex('pets').select('*').where('id', id).first();
+        const pet = await knex('pets')
+        .select(
+            'pets.*', 
+            'users.name as user_name', 
+            'users.whatsapp',
+            'users.email',
+            )
+        .join('users','users.id', '=','pets.user_id')
+        .where('pets.id', id).first();
 
         const serializedPets = {
             ... pet,
