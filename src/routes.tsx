@@ -2,16 +2,13 @@ import React from 'react';
 import {Route, BrowserRouter} from 'react-router-dom';
 
 import Home from './pages/Home';
-import CreatePet from './pages/CreatePet';
+import ListPets from './pages/ListPets';
 
 const Routes = () => {
     return (
         <BrowserRouter>
-            <Route component={Home}
-                path="/"
-                exact/>
-            <Route component={CreatePet}
-                path="/login"/>
+            <Route component={Home} path="/" exact />
+            <Route component={ListPets} path="/list-pets"/>
         </BrowserRouter>
     );
 }

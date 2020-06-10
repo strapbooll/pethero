@@ -27,7 +27,7 @@ const Dropzone: React.FC < Props > = ({onFileUploaded}) => {
                 alt="Point thumbmail"/> : (
                 <p>
                     <FiUpload/>
-                    Imagem do estabelecimento</p>
+                    Imagem do pet</p>
             )
         } </div>
     )
