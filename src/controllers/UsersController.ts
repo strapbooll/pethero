@@ -5,7 +5,7 @@ const authMiddleware = require("../middleware/auth");
 
 const routes = express.Router();
 
-routes.use(authMiddleware);
+//routes.use(authMiddleware);
 
 routes.get("/users", async (request : Request, response : Response) => {
     try {

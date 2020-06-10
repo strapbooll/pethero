@@ -7,6 +7,9 @@ export async function up(knex : Knex) {
         table.string('category').notNullable();
         table.integer('age').notNullable();
         table.string('image').notNullable();
+        table.string('size').notNullable();
+        table.string('genre').notNullable();
+        table.string('history').notNullable();
         table.integer('user_id').notNullable().references('id').inTable('users');
         table.timestamps(true);
     });
