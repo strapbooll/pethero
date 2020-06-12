@@ -1,4 +1,4 @@
-import React, {useEffect, useState, Component} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import male from '../../assets/male.png';
 import female from '../../assets/female.png';
@@ -16,7 +16,11 @@ interface Pet {
     genre: string;
 }
 
-const ListPets: React.FC = () => {
+interface Props{
+    category: string;
+}
+
+const ListPets: React.FC < Props > = ({category}) => {
     const [pets, setPets] = useState < Pet[] > ([]);
 
     useEffect(() => {
@@ -24,6 +28,12 @@ const ListPets: React.FC = () => {
             setPets(response.data);
         })
     }, []);
+
+    useEffect(() => {
+        api.get(`/pets/?category=${category}`).then(response => {
+            setPets(response.data);
+        })
+    }, [category]);
 
   return(
     <ul className="pets-grid">

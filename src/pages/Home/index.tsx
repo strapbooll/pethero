@@ -1,10 +1,8 @@
 import React, {useState, useEffect,FormEvent, ChangeEvent} from 'react';
 import {FiLogIn} from 'react-icons/fi';
-import logo from '../../assets/logo.svg';
 import {useHistory} from 'react-router-dom';
 import api from '../../services/api';
 import { login } from '../../services/auth';
-import ListPet from '../../components/ListPets';
 import Header from '../../components/Header';
 import './styles.css';
 
@@ -78,17 +76,6 @@ const Home = () => {
                                 </form>
                             </fieldset>
                         </div>
-                    </div>
-                    <div className="pet-cards">
-                        <fieldset>
-                            <legend>
-                                <h2>
-                                    Pets
-                                </h2>
-                                <span>Selecione um pet abaixo</span>
-                            </legend>
-                            <ListPet/>
-                        </fieldset>
                     </div>
                 </main>
             </div>
