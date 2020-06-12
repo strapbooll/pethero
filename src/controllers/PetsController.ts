@@ -11,7 +11,13 @@ const upload = multer(multerConfig);
 
 routes.get("/pets", async (request : Request, response : Response) => {
     try {
-        const pets = await knex('pets').select('*');
+        const {category} = request.query;        
+
+        let pets = await knex('pets').select('*');
+
+        if(category){
+            pets = await knex('pets').select('*').where('category', String(category))
+        }
 
         const serializedPets = pets.map(pet => {
             return {
