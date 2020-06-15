@@ -17,6 +17,9 @@
     display: flex;
     flex-direction: column;
 }
+#page-detail-pet main .card .detail p{
+    margin-top: 20px;
+}
 #page-detail-pet main .contact{
     display: flex;
     gap: 3px;

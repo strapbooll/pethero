@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useParams, Link} from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 import api from '../../services/api';
 import './styles.css';
@@ -37,7 +37,8 @@ const PetDetail = () => {
                 <div className="detail">
                     <h2>{pet.name}</h2>
                     <span>São Paulo, SP</span>                        
-                    <span>{`${pet.age} anos / ${pet.genre}`}</span>                                   
+                    <span>{`${pet.age} anos / ${pet.genre}`}</span>
+                    <span>{`${pet.email} - ${pet.whatsapp}`}</span>                          
                     <p>{pet.history}</p>
                 </div>
                 <div className="contact">

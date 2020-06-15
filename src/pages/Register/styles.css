@@ -1,8 +1,8 @@
-#page-home {
+#page-register {
   height: 100vh;
 }
 
-#page-home .content {
+#page-register .content {
   width: 100%;
   height: 100%;
   max-width: 1100px;
@@ -14,21 +14,20 @@
   align-items: flex-start;
 }
 
-#page-home .content header {
+#page-register .content header {
   display: flex;
   justify-content: center;
   width: 100%;
 }
-#page-home .content main {
+#page-register .content main {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   margin-top: 40px;
 }
-#page-home .content main fieldset{
+#page-register .content main fieldset{
   width: 100%;
   max-width: 350px;
   height: 100%;
@@ -36,25 +35,14 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
 }
-#page-home .content main fieldset span{
-  font-size: 17px;
+#page-register .content main fieldset p{
+  text-align: center;
+  margin-top: 30px;
 }
-#page-home .content main fieldset span a{
-  font-size: 19px;
-  text-decoration: none;
-}
-#page-home .content main fieldset + fieldset{
-  border-top: 1px solid #d9d9d9;
-  margin: 50px;
-}
-#page-home .content main fieldset legend{
-  margin: 0 auto;
-  font-size: 26px;
-  font-family: Roboto, Arial, Helvetica, sans-serif;
-  padding: 0px 15px;
-}
-#page-home .content main .message-error{
+
+#page-register .content main .message-error{
   width: 100%;
   display: flex;
   align-items: center;
@@ -66,7 +54,7 @@
   margin-bottom: 10px;
 }
 
-#page-home .content main form button {
+#page-register .content main form button {
   width: 100%;
   height: 60px;
   background: var(--primary-color);  
@@ -78,11 +66,11 @@
   margin-top: 25px;
   cursor: pointer;
 }
-#page-home form{
+#page-register form{
   width: 100%;
 }
 
-#page-home form .field input{
+#page-register form .field input{
   flex: 1;
   border-radius: 8px;
   border: 0;
@@ -91,7 +79,7 @@
   color: #6C6C80;
   width: 100%;
 }
-#page-home form .field + .field {
+#page-register form .field + .field {
   margin-top: 24px;
 }
 .pets-grid li, .pets-grid li img  {
@@ -103,7 +91,7 @@
   justify-content: space-between;  
 }
 
-#page-home .content main form button span {
+#page-register .content main form button span {
   display: block;
   background: rgba(0, 0, 0, 0.08);
   width: 72px;
@@ -115,19 +103,19 @@
   transition: background-color 0.2s;
 }
 
-#page-home .content main form button span svg {
+#page-register .content main form button span svg {
   color: #FFF;
   width: 20px;
   height: 20px;
 }
 
-#page-home .content main form button strong {
+#page-register .content main form button strong {
   flex: 1;
   text-align: center;
   color: #FFF;
 }
 
-#page-home .content main form button:hover {
+#page-register .content main form button:hover {
   opacity: .9;
 }
 
@@ -174,12 +162,12 @@
 }
 
 @media(max-width: 900px) {
-  #page-home .content {
+  #page-register .content {
     align-items: center;
     text-align: center;
   }
 
-  #page-home .content header {
+  #page-register .content header {
     margin: 48px auto 0;
   }
 }

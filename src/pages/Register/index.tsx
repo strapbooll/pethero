@@ -1,20 +1,16 @@
-import React, {useState, useEffect, FormEvent, ChangeEvent} from 'react';
+import React, {useState, FormEvent, ChangeEvent} from 'react';
 import {FiLogIn} from 'react-icons/fi';
-import {useHistory, Link} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import api from '../../services/api';
 import {login} from '../../services/auth';
 import Header from '../../components/Header';
 import './styles.css';
 
-const Home = () => {
-    const [formData, setFormData] = useState({email: '', password: ''});
+const Register = () => {
+    const [formData, setFormData] = useState({name: '',email: '',whatsapp: '', password: ''});
     const [message, setMessage] = useState('');
 
     const history = useHistory();
-
-    useEffect(() => {
-        localStorage.removeItem('token');
-    }, [localStorage.getItem('token')]);
 
     function handleInputChange(event : ChangeEvent < HTMLInputElement >) {
         const {name, value} = event.target
@@ -26,18 +22,16 @@ const Home = () => {
 
     async function handleSubmit(event : FormEvent) {
         event.preventDefault();
-
-        const {email, password} = formData;
-
-        await api.post('/authenticate', {email, password}).then((response) => {
+        const {name, email, whatsapp, password} = formData;
+        await api.post('/register', {name, email, whatsapp, password}).then((response) => {
             login(response.data.token);
-            history.push('/list-pets')
+            history.push('/')
         }).catch((err,) => {
             setMessage(err.response.data.error);
         });
     }
     return (
-        <div id="page-home">
+        <div id="page-register">
             <div className="content">
                 <Header/>
                 <main>
@@ -47,8 +41,20 @@ const Home = () => {
                     }
                         <form onSubmit={handleSubmit}>
                             <div className="field">
+                                <label htmlFor="name">Nome completo</label>
+                                <input type="text" name="name" id="name"
+                                    onChange={handleInputChange}
+                                    required/>
+                            </div>
+                            <div className="field">
                                 <label htmlFor="email">E-mail</label>
                                 <input type="email" name="email" id="email"
+                                    onChange={handleInputChange}
+                                    required/>
+                            </div>
+                            <div className="field">
+                                <label htmlFor="whatsapp">Whatsapp</label>
+                                <input type="text" name="whatsapp" id="whatsapp"
                                     onChange={handleInputChange}
                                     required/>
                             </div>
@@ -62,13 +68,12 @@ const Home = () => {
                                 <span>
                                     <FiLogIn/>
                                 </span>
-                                <strong>Login</strong>
+                                <strong>Cadastre-se</strong>
                             </button>
                         </form>
-                    </fieldset>
-                    <fieldset>
-                        <legend>ou</legend>
-                        <span>Não tem uma conta? <Link to="/register">Cadastre-se</Link></span>
+                        <p>
+                        Ao se cadastrar, você concorda com nossos<br /> Termos, Política de Dados e Política de<br /> Cookies.
+                        </p>
                     </fieldset>
                 </main>
             </div>
@@ -76,4 +81,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Register;
