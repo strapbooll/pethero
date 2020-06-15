@@ -20,13 +20,13 @@ const ListPets = () => {
         <div id="page-create-pets">
             <Header />
             <div className="nav">
-                <span>Adote</span>
+                <span>Adote</span>                
             </div>
             <div className="pet-cards">
                 <fieldset>
                     <legend>
                         <h2>
-                            Pets
+                            Adote um amigo
                         </h2>
                         <ul className="category-grid">
                             <li 
