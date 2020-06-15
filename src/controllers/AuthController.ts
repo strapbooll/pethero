@@ -35,4 +35,22 @@ routes.post("/authenticate", async (request : Request, response : Response, next
     return next(response.json({user, token}));
 });
 
+routes.post("/register", async (request : Request, response : Response) => {
+    try {
+      let { name, email, whatsapp, password } = request.body;
+
+      const userAlreadyExists = await knex('users').where('email', email);
+      if (userAlreadyExists[0])
+        return response.status(400).send({ error: "User already exists" });
+      
+      password = await bcrypt.hash(password, 10);
+  
+      const user = await knex('users').insert({name, email, whatsapp, password});
+  
+      return response.send({ user });
+    } catch (err) {
+      return response.status(400).send({ error: "Registration failed" });
+    }
+  });
+
 export default routes;
