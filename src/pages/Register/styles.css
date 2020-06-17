@@ -8,7 +8,6 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 30px;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -70,18 +69,56 @@
   width: 100%;
 }
 
-#page-register form .field input{
+#page-register form .field-group {
+  display: flex;
   flex: 1;
+  gap: 5px;
+}
+
+#page-register form .field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+#page-register form .field input[type=text],
+#page-register form .field input[type=email],
+#page-register form .field input[type=password],
+#page-register form .field select{
+  flex: 1;
+  background: #fff;
   border-radius: 8px;
   border: 0;
   padding: 16px 24px;
   font-size: 16px;
   color: #6C6C80;
-  width: 100%;
 }
-#page-register form .field + .field {
+
+#page-register form .field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#page-register form .field {
   margin-top: 24px;
 }
+
+#page-register form .field input::placeholder {
+  color: #A0A0B2;
+}
+
+#page-register form .field label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+#page-register form .field :disabled {
+  cursor: not-allowed;
+}
+
+
 .pets-grid li, .pets-grid li img  {
   border-radius: 3px;
 }

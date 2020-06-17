@@ -1,4 +1,4 @@
-import React, { Component, FunctionComponent } from 'react';
+import React from 'react';
 import {Route, BrowserRouter, Redirect, Switch } from 'react-router-dom';
 import { isAutheticate } from "./services/auth";
 

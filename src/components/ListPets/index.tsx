@@ -65,7 +65,7 @@ const ListPets: React.FC < Props > = ({category}) => {
                 </div>
                 {localStorage.getItem('token') && (
                     <Link to={`/pet-detail/${pet.id}`}>                                                
-                        <strong>Adotar</strong>
+                        <strong>QUERO ADOTAR</strong>
                     </Link>
                 )}
             </div>

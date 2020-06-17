@@ -10,15 +10,31 @@
     gap: 20px;
 }
 #page-detail-pet main img{
-    width: 400px;
+    width: 100%;
     border-radius: 5px;
+}
+#page-detail-pet main .card{
+    width: 100%;
+}
+#page-detail-pet main .card .detail{
+    width: 50%;
 }
 #page-detail-pet main .card, #page-detail-pet main .card .detail{
     display: flex;
     flex-direction: column;
 }
+#page-detail-pet main .card .detail fieldset{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 0;
+    border-bottom: 1px solid #d9d9d9;
+}
 #page-detail-pet main .card .detail p{
     margin-top: 20px;
+}
+#page-detail-pet main .card .detail span a{
+    font-size: 18px;
+    text-decoration: none;
 }
 #page-detail-pet main .contact{
     display: flex;
