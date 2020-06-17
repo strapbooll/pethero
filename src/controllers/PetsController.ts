@@ -49,6 +49,8 @@ routes.get("/pets/:id", async (request : Request, response : Response) => {
             'users.name as user_name', 
             'users.whatsapp',
             'users.email',
+            'users.city',
+            'users.uf',
             )
         .join('users','users.id', '=','pets.user_id')
         .where('pets.id', id).first();

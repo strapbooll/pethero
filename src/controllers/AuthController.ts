@@ -37,7 +37,7 @@ routes.post("/authenticate", async (request : Request, response : Response, next
 
 routes.post("/register", async (request : Request, response : Response) => {
     try {
-      let { name, email, whatsapp, password } = request.body;
+      let { name, email, whatsapp, password, uf, city } = request.body;
 
       const userAlreadyExists = await knex('users').where('email', email);
       if (userAlreadyExists[0])
@@ -45,7 +45,7 @@ routes.post("/register", async (request : Request, response : Response) => {
       
       password = await bcrypt.hash(password, 10);
   
-      const user = await knex('users').insert({name, email, whatsapp, password});
+      const user = await knex('users').insert({name, email, whatsapp, password, uf, city});
   
       return response.send({ user });
     } catch (err) {

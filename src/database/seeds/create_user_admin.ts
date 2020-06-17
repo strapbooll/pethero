@@ -6,6 +6,8 @@ export async function seed(knex : Knex) {
             name: 'Administrador',
             email: 'admin@pethero.com.br',
             whatsapp: '11 95130-1230',
-            password: await bcrypt.hash('123', 10)
+            password: await bcrypt.hash('123', 10),
+            uf: 'SP',
+            city: 'São Paulo',
         },]);
 }

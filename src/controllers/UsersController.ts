@@ -31,7 +31,7 @@ routes.get("/users/:id", async (request : Request, response : Response) => {
 
 routes.post("/users", async (request : Request, response : Response) => {
     try {
-        let {name, email, whatsapp, password} = request.body;
+        let {name, email, whatsapp, password, uf, city} = request.body;
 
         if (!await knex('users').where('email', email)) 
             return response.status(400).json({error: "User already exists"});
@@ -40,7 +40,7 @@ routes.post("/users", async (request : Request, response : Response) => {
 
         password = await bcrypt.hash(password, 10);
 
-        let user = await knex('users').insert({name, email, whatsapp, password});
+        let user = await knex('users').insert({name, email, whatsapp, password, uf, city});
 
         return response.json(user);
     } catch (err) {
