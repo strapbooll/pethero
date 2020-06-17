@@ -71,7 +71,7 @@ const Register = () => {
         });
     }
     return (
-        <div id="page-register">
+        <div id="page-content">
             <div className="content">
                 <Header/>
                 <main>

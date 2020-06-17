@@ -14,6 +14,7 @@ const Home = () => {
 
     useEffect(() => {
         localStorage.removeItem('token');
+        sessionStorage.removeItem('user_id');
     }, [localStorage.getItem('token')]);
 
     function handleInputChange(event : ChangeEvent < HTMLInputElement >) {
@@ -31,13 +32,14 @@ const Home = () => {
 
         await api.post('/authenticate', {email, password}).then((response) => {
             login(response.data.token);
+            sessionStorage.setItem('user_id', response.data.user.id)
             history.push('/list-pets')
         }).catch((err,) => {
             setMessage(err.response.data.error);
         });
     }
     return (
-        <div id="page-home">
+        <div id="page-content">
             <div className="content">
                 <Header/>
                 <main>

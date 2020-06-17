@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { FaDog, FaCat } from 'react-icons/fa';
+import { FaDog, FaCat, FaDragon } from 'react-icons/fa';
+import {Link} from 'react-router-dom';
 import './styles.css';
 import ListPet from '../../components/ListPets';
 import Header from '../../components/Header';
@@ -17,16 +18,17 @@ const ListPets = () => {
     }
 
     return (
-        <div id="page-create-pets">
+        <div id="page-content">
             <Header />
             <div className="nav">
-                <span>Adote</span>                
+                <span>Adote um amigo</span>               
+                <Link to="/register-pet"><FaDragon />Cadastrar um amigo</Link>
             </div>
             <div className="pet-cards">
                 <fieldset>
                     <legend>
                         <h2>
-                            Adote um amigo
+                            Categoria
                         </h2>
                         <ul className="category-grid">
                             <li 

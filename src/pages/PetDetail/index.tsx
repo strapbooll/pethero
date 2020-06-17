@@ -30,7 +30,7 @@ const PetDetail = () => {
         })
     }, []);
     return (
-        <div id="page-detail-pet">
+        <div id="page-content">
             <Header/>
             <main>                
                 <img src={pet.image_url} alt={pet.name}/>
